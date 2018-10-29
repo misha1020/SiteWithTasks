@@ -1,11 +1,13 @@
-.header{
+#header{
+	position: fixed;
+	top: 0;	left: 0;
 	background-color: #2F4538;
+	color: #FFFFFF;	
 	height: 100px;
-	width: 100%;
-	margin-bottom: 20px;
+	width: 100%;		
 }
 
-.logo{
+#logo{
 	height: 50px;
 	width: 50px;
 	float: left;
@@ -15,7 +17,6 @@
 .text{
 	font-size: 1.1em;
 	font-family: Comic Sans MS, sans-serif;
-	color: #FFFFFF;	
 	float: right;
 	margin: 35px 50px 35px 25px;	
 }
