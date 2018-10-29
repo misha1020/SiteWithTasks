@@ -1,8 +1,21 @@
-h3{
-	text-align: center;
-	justify-content: space-between;
-	background-color: gray;
-	height: 120px;
+.header{
+	background-color: #2F4538;
+	height: 100px;
 	width: 100%;
-	margin-bottom: 1000;
+	margin-bottom: 20px;
+}
+
+.logo{
+	height: 50px;
+	width: 50px;
+	float: left;
+	margin: 25px 30px 25px 30px;
+}
+
+.text{
+	font-size: 1.1em;
+	font-family: Comic Sans MS, sans-serif;
+	color: #FFFFFF;	
+	float: right;
+	margin: 35px 50px 35px 25px;	
 }
