@@ -4,7 +4,6 @@
 	float: left;
 }
 
-
 #ico{
 	float: right;
 	height: 50px;
@@ -25,7 +24,7 @@
 	width: 93%;
 }
 
-#serchButton{
+#searchButton{
 	width: 20%;
 	height: 100%;
 	float: right;
@@ -40,5 +39,4 @@
 
 #root{
 	margin-bottom: 65px;
-	
 }
