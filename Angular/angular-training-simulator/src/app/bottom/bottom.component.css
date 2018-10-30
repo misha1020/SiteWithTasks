@@ -1,5 +1,5 @@
 #footer {
-    position: absolute; /* Фиксированное положение */
+    /*position: absolute; /* Фиксированное положение */
     left: 0; bottom: 0; /* Левый нижний угол */
     background: #2F4538; /* Цвет фона */
     color: #FFFFFF; /* Цвет текста */

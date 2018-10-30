@@ -15,3 +15,9 @@ h1{
 	color: #2F4538;
 	text-align: center;
 }
+
+#root{
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
