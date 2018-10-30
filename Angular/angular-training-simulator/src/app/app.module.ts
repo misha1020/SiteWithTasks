@@ -6,7 +6,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { HeaderComponent } from './header/header.component';
 import { ProblemComponent } from './problem/problem.component';
 import { BottomComponent } from './bottom/bottom.component';
-import { SertchComponent } from './sertch/sertch.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { SertchComponent } from './sertch/sertch.component';
     HeaderComponent,
     ProblemComponent,
     BottomComponent,
-    SertchComponent
+    SearchComponent
   ],
   imports: [
     BrowserModule
