@@ -7,15 +7,8 @@ import { RegisterComponent } from '../register';
 
 @Component({
     selector: 'jw-modal',
-    template: 
-        `<div> class="jw-modal">
-            <div class="jw-modal-body">
-                <ng-content></ng-content>
-				<router-outlet></router-outlet>
-				<alert></alert>
-            </div>
-        </div>
-        <div class="jw-modal-background"></div>`
+	templateUrl: './modal.component.html',
+	styleUrls: ['./modal.component.css']
 })
 
 export class ModalComponent implements OnInit, OnDestroy {

@@ -29,3 +29,6 @@
 	margin: 30px 30px 30px 30px;
 }
 
+jw-modal {
+    display: none;
+}
