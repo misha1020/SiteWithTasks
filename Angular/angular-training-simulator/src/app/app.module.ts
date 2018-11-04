@@ -14,10 +14,10 @@ import { BottomComponent } from './bottom/bottom.component';
 import { SearchComponent } from './search/search.component';
 import { routing }        from './app.routing';
 
-import { AlertComponent } from './_directives';
+import { AlertComponent, ModalComponent } from './_directives';
 import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AlertService, AuthenticationService, UserService } from './_services';
+import { AlertService, AuthenticationService, UserService, ModalService } from './_services';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
@@ -33,7 +33,8 @@ import { RegisterComponent } from './register';
     AlertComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+	ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +47,7 @@ import { RegisterComponent } from './register';
     AlertService,
     AuthenticationService,
     UserService,
+	ModalService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
