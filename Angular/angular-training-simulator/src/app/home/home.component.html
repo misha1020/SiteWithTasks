@@ -1,0 +1,14 @@
+﻿<h1>Здравствуйте {{currentUser.firstName}}!</h1>
+<h2>
+<p>Успешный вход в учётную запись!</p>
+
+<!--<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul> -->
+<a [routerLink]="['/login']" class="btn btn-link text">Выйти</a>
+</h2>
+
