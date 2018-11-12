@@ -23,6 +23,7 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from  '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -45,6 +46,7 @@ import { environment } from '../environments/environment';
     HttpClientModule,
 	AngularFireModule.initializeApp(environment.firebase),
 	AngularFireDatabaseModule,
+	AngularFireAuthModule,
     routing
   ],
   providers: [
