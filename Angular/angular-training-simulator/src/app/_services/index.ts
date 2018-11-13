@@ -2,4 +2,4 @@
 export * from './authentication.service';
 export * from './user.service';
 export * from './modal.service';
-export * from './problem.service';
+export {ProblemService} from './problem.service';

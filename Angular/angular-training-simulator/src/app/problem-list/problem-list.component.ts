@@ -10,10 +10,10 @@ import { Problem } from '../_models';
 export class ProblemListComponent implements OnInit {
   problems: Problem[];
   constructor(private problemService: ProblemService) { 
+    problemService.item.subscribe(data => {this.problems = data as Problem[] } );
   }
 
   ngOnInit() {
-    this.problems = this.problemService.getProblems();
   }
 
 }
