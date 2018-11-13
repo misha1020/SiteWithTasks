@@ -18,10 +18,6 @@ export class UserService {
     }
 
     getById(id: number) {
-		strind key = '-LR7TAxkSs8ng7XMvzJ7';
-		const itemPath =  `/items/${key}`;
-		this.item = this.db.object('/users');
-		console.log(item);
         return this.http.get('http://localhost:4000/users/' + id);
     }
 
