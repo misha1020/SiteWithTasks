@@ -21,7 +21,7 @@ export class UserService {
         return this.http.get('http://localhost:4000/users/' + id);
     }
 
-    register(user: User) {
+    register(user) {
 		//this.users.push(user);
 		this.afAuth.auth.createUserWithEmailAndPassword(user.username, user.password).catch(function(error) {
 			// Handle Errors here.
