@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ModalService } from '../_services';
+import { ModalService, AuthenticationService } from '../_services';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import { ModalService } from '../_services';
 export class HeaderComponent implements OnInit {
 	bodyText: string;
 	
-	constructor(private modalService: ModalService) {
+	constructor(private modalService: ModalService, private auth: AuthenticationService) {
 	}
 
 	ngOnInit() {
@@ -23,6 +23,10 @@ export class HeaderComponent implements OnInit {
 
     closeModal(id: string) {
         this.modalService.close(id);
+    }
+
+    logout(){
+        this.auth.logout();
     }
 
 }

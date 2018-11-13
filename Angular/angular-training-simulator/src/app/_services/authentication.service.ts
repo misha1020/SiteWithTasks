@@ -15,12 +15,16 @@ export class AuthenticationService {
                 .then(res => {
                     resolve(res);
                   }, err => reject(err))
-        });
+        }); 
     }
 
     logout() {
-        // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
+        this.afAuth.auth.signOut();
+    }
+
+    getUser()
+    {
+        return this.afAuth.auth.currentUser;
     }
 
     tryRegister(user){
