@@ -2,12 +2,27 @@
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable, of } from 'rxjs';
+import { switchMap} from 'rxjs/operators';
 import { User } from '../_models';
 
 @Injectable()
 export class AuthenticationService {
-    constructor(private http: HttpClient, public afAuth: AngularFireAuth, private afStore: AngularFirestore,) { }
+    private itemDoc: AngularFirestoreDocument<User>;
+    item: Observable<User>;
+    constructor(private http: HttpClient, public afAuth: AngularFireAuth, private afStore: AngularFirestore) {
+        this.item = this.afAuth.authState.pipe(
+            switchMap(user => {
+              if (user) {
+                  console.log(this.afAuth.auth.currentUser.uid);
+                return this.afStore.doc<User>(`users/${this.afAuth.auth.currentUser.uid}`).valueChanges()
+              } else {
+                return of(null)
+              }
+            })
+          )
+     }
 
     login(email: string, password: string) {
         return new Promise<any>((resolve, reject) => {

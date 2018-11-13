@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ModalService, AuthenticationService } from '../_services';
+
+
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable, from } from 'rxjs';
+import { User } from '../_models';
+
+export interface Item { name: string; }
 
 @Component({
   selector: 'app-header',
@@ -10,6 +16,7 @@ import { ModalService, AuthenticationService } from '../_services';
 export class HeaderComponent implements OnInit {
 	bodyText: string;
 	
+
 	constructor(private modalService: ModalService, private auth: AuthenticationService) {
 	}
 
@@ -29,4 +36,7 @@ export class HeaderComponent implements OnInit {
         this.auth.logout();
     }
 
+    connectToCurrenUser(){
+
+    }
 }

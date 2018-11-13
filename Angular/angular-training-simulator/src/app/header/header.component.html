@@ -4,14 +4,13 @@
 	</div>
 	<div class = "name">Задачи поколения Z</div>
 	<div *ngIf="this.auth.getUser()!=null; else loggedOut">
+			<div style="color: yellow">{{ (auth.item | async)?.firstName }}</div>
 			<button class="button_header" (click)="logout()">Выход</button>
 	</div>
 	<ng-template #loggedOut>
     	<button class="button_header" (click)="openModal('custom-modal-2')">Регистрация</button>
 		<button class="button_header" (click)="openModal('custom-modal-2')">Вход</button>
 	</ng-template>
-	<!-- <div class = "text">Вход</div> 
-	<div class = "text">Регистрация</div> -->
 	
 </header>	
 
