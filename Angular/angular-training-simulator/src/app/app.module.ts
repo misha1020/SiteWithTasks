@@ -21,6 +21,11 @@ import { AlertService, AuthenticationService, UserService, ModalService } from '
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from  '@angular/fire/database';
+import { AngularFirestoreModule } from  '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,10 @@ import { RegisterComponent } from './register';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+	  AngularFireModule.initializeApp(environment.firebase),
+	  AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     routing
   ],
   providers: [
