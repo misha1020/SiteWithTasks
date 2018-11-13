@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AlertService, UserService } from '../_services';
+import { AlertService, UserService, AuthenticationService } from '../_services';
 
 @Component({templateUrl: 'register.component.html',
 	styleUrls: ['./register.component.css']
@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
-        private userService: UserService,
+        private authenticationService: AuthenticationService,
         private alertService: AlertService) { }
 
     ngOnInit() {
@@ -38,18 +38,20 @@ export class RegisterComponent implements OnInit {
         if (this.registerForm.invalid) {
             return;
         }
-
         this.loading = true;
-        this.userService.register(this.registerForm.value)
-            .pipe(first())
-            .subscribe(
-                data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
+        this.authenticationService.tryRegister(this.registerForm.value)
+            .then(res => {
+              console.log(res);
+              this.alertService.success('Registration successful', true);
+              this.router.navigate(['/login']);
+              /*this.errorMessage = "";
+              this.successMessage = "Your account has been created";*/
+            }, err => {
+                console.log(err.message);
+              this.alertService.error(err);
+              this.loading = false;
+              /*this.errorMessage = err.message;
+              this.successMessage = "";*/
+            });
     }
 }

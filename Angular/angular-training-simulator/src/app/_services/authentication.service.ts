@@ -2,25 +2,20 @@
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { User } from '../_models';
 
 @Injectable()
 export class AuthenticationService {
     constructor(private http: HttpClient, public afAuth: AngularFireAuth) { }
 
     login(username: string, password: string) {
-		this.afAuth.auth.signInWithEmailAndPassword(username, password)
-			.catch(function(error) {
-				// Handle Errors here.
-				var errorCode = error.code;
-				var errorMessage = error.message;
-				if (errorCode === 'auth/wrong-password') {
-					alert('Wrong password.');
-				} else {
-					alert(errorMessage);
-				}
-				console.log(error);
-			});
-        return this.http.post<any>('http://localhost:4000/users/authenticate', { username: username, password: password })
+        return new Promise<any>((resolve, reject) => {
+            this.afAuth.auth.signInWithEmailAndPassword(username, password)
+                .then(res => {
+                    resolve(res);
+                  }, err => reject(err))
+        });
+        /*return this.http.post<any>('http://localhost:4000/users/authenticate', { username: username, password: password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
@@ -29,11 +24,29 @@ export class AuthenticationService {
                 }
 
                 return user;
-            }));
+            }));*/
     }
 
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
+
+    tryRegister(user: User){
+        return new Promise<any>((resolve, reject) => {
+            this.doRegister(user)
+                .then(res => {
+                resolve(res);
+            }, err => reject(err))
+        })
+    }
+
+    doRegister(value){
+        return new Promise<any>((resolve, reject) => {
+            this.afAuth.auth.createUserWithEmailAndPassword(value.username, value.password)
+          .then(res => {
+            resolve(res);
+          }, err => reject(err))
+        })
+      }
 }

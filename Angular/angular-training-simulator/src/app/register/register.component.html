@@ -16,10 +16,10 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<div for="username">Логин</div>
+			<div for="username">Email</div>
 			<input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
 			<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-				<div *ngIf="f.username.errors.required">Требуется ввести логин</div>
+				<div *ngIf="f.username.errors.required">Требуется ввести email</div>
 			</div>
 		</div>
 		<div class="form-group">
