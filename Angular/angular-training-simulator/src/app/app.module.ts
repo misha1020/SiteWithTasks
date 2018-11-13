@@ -21,6 +21,7 @@ import { AlertService, AuthenticationService, UserService, ModalService } from '
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
+import { OverviewComponent } from './overview';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RegisterComponent } from './register';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-	ModalComponent
+	ModalComponent,
+	OverviewComponent
   ],
   imports: [
     BrowserModule,
