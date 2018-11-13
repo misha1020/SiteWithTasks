@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Problem } from '../problem';
+import { Component, OnInit, Input } from '@angular/core';
+import { Problem } from '../_models';
 
 @Component({
   selector: 'app-problem',
@@ -7,11 +7,7 @@ import { Problem } from '../problem';
   styleUrls: ['./problem.component.css']
 })
 export class ProblemComponent implements OnInit {
-	problem: Problem = {
-		name: "Задача 1",
-		problemText: "текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст",
-		solutionText: "решение решение решение решение решение решение решение решение решение решение решение решение решение решение решение решение решение решение решение решение "
-	}
+	@Input() problem: Problem;
 
 	constructor() { }
 

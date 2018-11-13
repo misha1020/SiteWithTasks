@@ -26,6 +26,7 @@ import { AngularFireDatabaseModule } from  '@angular/fire/database';
 import { AngularFirestoreModule } from  '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { ProblemListComponent } from './problem-list/problem-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { environment } from '../environments/environment';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-	ModalComponent
+	ModalComponent,
+	ProblemListComponent
   ],
   imports: [
     BrowserModule,
