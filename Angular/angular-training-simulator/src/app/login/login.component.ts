@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.f.username.value, this.f.password.value)
         .then(res => {
             console.log(res);
-            this.alertService.success('Login successful', true);
+            this.alertService.success('Вход выполнен!', true);
             this.router.navigate([this.returnUrl]);
             this.loading = false;
           }, err => {

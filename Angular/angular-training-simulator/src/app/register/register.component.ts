@@ -42,8 +42,8 @@ export class RegisterComponent implements OnInit {
         this.authenticationService.tryRegister(this.registerForm.value)
             .then(res => {
               console.log(res);
-              this.alertService.success('Registration successful', true);
-              this.router.navigate(['/login']);
+              this.alertService.success('Регистрация прошла успешно!', true);
+              this.router.navigate([{ outlets: {auth: ['login'] }}]);
               /*this.errorMessage = "";
               this.successMessage = "Your account has been created";*/
             }, err => {

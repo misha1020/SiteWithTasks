@@ -22,6 +22,14 @@
 	margin: 10px 30px 10px 30%;
 }
 
+.user{
+	font-size: 1.0em;
+	color: #FFFFFF;
+	font-family: Comic Sans MS, sans-serif;
+	float: left;
+	margin: 30px 15px 25px 12%;
+}
+
 .button_header{
 	font-size: 1.3em;
 	font-family: Comic Sans MS, sans-serif;

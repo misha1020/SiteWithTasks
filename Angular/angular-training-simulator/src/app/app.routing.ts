@@ -14,7 +14,7 @@ const appRoutes: Routes = [
     { path: '', component: ProblemListComponent},
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
-	{ path: 'overview', component: OverviewComponent}
+	{ path: 'problem/:id', component: OverviewComponent}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
