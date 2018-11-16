@@ -17,11 +17,17 @@ import { routing }        from './app.routing';
 import { AlertComponent, ModalComponent } from './_directives';
 import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AlertService, AuthenticationService, UserService, ModalService } from './_services';
+import { AlertService, AuthenticationService, UserService, ModalService, ProblemService } from './_services';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { OverviewComponent } from './overview';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from  '@angular/fire/database';
+import { AngularFirestoreModule } from  '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { ProblemListComponent } from './problem-list/problem-list.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +41,18 @@ import { OverviewComponent } from './overview';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-	ModalComponent,
-	OverviewComponent
+	  ModalComponent,
+	  OverviewComponent,
+	  ProblemListComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+	  AngularFireModule.initializeApp(environment.firebase),
+	  AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     routing
   ],
   providers: [
@@ -49,7 +60,8 @@ import { OverviewComponent } from './overview';
     AlertService,
     AuthenticationService,
     UserService,
-	ModalService,
+    ModalService,
+    ProblemService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
