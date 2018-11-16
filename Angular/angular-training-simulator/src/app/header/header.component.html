@@ -9,13 +9,14 @@
 			<button class="button_header" (click)="logout()">Выход</button>
 	</div>
 	<ng-template #loggedOut>
-    	<button class="button_header" (click)="openModal('custom-modal-2')">Регистрация</button>
-		<button class="button_header" (click)="openModal('custom-modal-2')">Вход</button>
+    	<button class="button_header" (click)="openModal('custom-modal-2')" [routerLink]="[{ outlets: {auth: ['register'] }}]">Регистрация</button>
+		<button class="button_header" (click)="openModal('custom-modal-2')" [routerLink]="[{ outlets: {auth: ['login'] }}]">Вход</button>
 	</ng-template>
 </header>	
 
 <jw-modal id="custom-modal-2">
-	<router-outlet></router-outlet>
+	<router-outlet name ="auth"></router-outlet>
 	<alert></alert>
     <button (click)="closeModal('custom-modal-2');" class = "button">Закрыть</button>
 </jw-modal>
+
