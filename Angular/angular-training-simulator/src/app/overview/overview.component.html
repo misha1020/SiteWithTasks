@@ -1,14 +1,21 @@
 <app-problem [problem] = "problem"></app-problem>
+
+<div class = "root">
 <ul>
 	<li style="list-style-type:none" *ngFor="let coment of coments">
 		<app-coment [coment] = "coment"></app-coment>
 	</li>
 </ul>
-
-<div *ngIf="this.auth.getUser()!=null; else loggedOut">
-		<input type="text" (keyup)="onKey($event)"/>
-		<button (click) = "sendComent()">Отправить</button>
 </div>
-<ng-template #loggedOut>
+
+<div id = "fixed">
+	<div *ngIf="this.auth.getUser()!=null; else loggedOut">
+		<div class="text">Добавить комментарий:</div>
+		<input class="textbox" type="text" (keyup)="onKey($event)"/>
+		<button class="button" (click) = "sendComent()">Отправить</button>
+	</div>
+</div>
+
+<ng-template class="text" #loggedOut>
 	Авторизируйтась что бы оставлять коментарии
 </ng-template>
