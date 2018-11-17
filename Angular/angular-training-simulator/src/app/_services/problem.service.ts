@@ -27,6 +27,17 @@ export class ProblemService {
         return this.afStore.doc<Problem>(`problems/${id}`).valueChanges()
     }
 
+    postComent(idUser: string, idProblem: string, text: string){
+        const data: fsComent = {
+            id: this.afStore.createId(),
+            idUser: idUser,
+            idProblem: idProblem,
+            Text: text
+          }
+        const comentRef: AngularFirestoreDocument<any> = this.afStore.doc(`comentaries/${data.id}`);
+        comentRef.set(data, { merge: true });
+    }
+
     getComents(id: string){
         this.fsComentsColl = this.afStore.collection('comentaries', ref => ref.where('idProblem', '==', id ));
         this.fsComents = this.fsComentsColl.valueChanges();
