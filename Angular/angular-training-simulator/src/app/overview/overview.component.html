@@ -1,6 +1,9 @@
 <app-problem [problem] = "problem"></app-problem>
 
 <div class = "root">
+<div class="onlySymbols" *ngIf="coments.length == 0">
+	Комментариев нет!
+</div>
 <ul>
 	<li style="list-style-type:none" *ngFor="let coment of coments">
 		<app-coment [coment] = "coment"></app-coment>
@@ -14,8 +17,12 @@
 		<input class="textbox" type="text" (keyup)="onKey($event)"/>
 		<button class="button" (click) = "sendComent()">Отправить</button>
 	</div>
-</div>
 
-<ng-template class="text" #loggedOut>
-	Авторизируйтась что бы оставлять коментарии
+<ng-template #loggedOut>
+<div class="root">
+<pre class	="onlySymbols">Авторизируйтесь,
+чтобы оставлять коментарии!
+</pre>
+</div>
 </ng-template>
+</div>	
