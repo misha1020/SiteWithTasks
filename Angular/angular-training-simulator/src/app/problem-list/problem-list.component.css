@@ -1,0 +1,40 @@
+#searchBar{
+	background-color: #FFFFFF;
+}
+
+#ico{
+	float: right;
+	height: 50px;
+	width: 50px;
+	margin-left: 10px;
+	margin-right: 2px;
+	margin-top: 5px;
+}
+
+.text{
+    background-image: url("../../assets/icons/search.png");
+    background-repeat: no-repeat;
+    padding-left: 65px;
+    background-position: 14px 10px; 
+	border: 1px solid #555;
+	border-radius: 7px;
+	font: 55px sans-serif;
+	width: 88%;
+}
+
+#searchButton{
+	width: 30%;
+	height: 100%;
+	float: right;
+	background-color: #2F4538;
+	color: #FFFFFF;
+	border-radius: 7px;
+	font: 58px sans-serif;
+	border: none;
+    text-align: center;
+    display: inline-block;
+}
+
+#root{
+	margin-bottom: 65px;
+}
