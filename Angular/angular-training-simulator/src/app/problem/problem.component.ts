@@ -8,10 +8,15 @@ import { Problem } from '../_models';
 })
 export class ProblemComponent implements OnInit {
 	@Input() problem: Problem;
+  private	display: boolean;
 
 	constructor() { }
 
 	ngOnInit() {
+		this.display = false;
 	}
 
+	openModal() {
+	this.display = !this.display;
+  }
 }

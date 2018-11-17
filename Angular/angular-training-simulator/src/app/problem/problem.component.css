@@ -23,3 +23,13 @@ h1{
 	margin-right: 30px;
 	margin-bottom: 10px;
 }
+
+#plus{
+	background-color: #EEE;
+	color: #111;
+	border-style: solid;
+	border-radius: 5px;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	font-family: Comic Sans MS, sans-serif;
+}
