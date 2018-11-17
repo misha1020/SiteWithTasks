@@ -21,7 +21,7 @@ export class ProblemService {
     constructor(private afStore: AngularFirestore) {
         this.itemColl = this.afStore.collection('problems');
         this.item = this.itemColl.valueChanges();
-        }
+    }
         
     getInfo(id : string){
         return this.afStore.doc<Problem>(`problems/${id}`).valueChanges()

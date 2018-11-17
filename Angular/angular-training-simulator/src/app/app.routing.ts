@@ -6,6 +6,7 @@ import { RegisterComponent } from './register';
 import { ProblemListComponent } from './problem-list/problem-list.component';
 import { AuthGuard } from './_guards';
 import { OverviewComponent } from './overview';
+import { AddProblemComponent } from './add-problem/add-problem.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent, outlet: "auth" },
@@ -14,7 +15,8 @@ const appRoutes: Routes = [
     { path: '', component: ProblemListComponent},
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
-	{ path: 'problem/:id', component: OverviewComponent}
+    { path: 'problem/:id', component: OverviewComponent},
+    { path: 'add_problem', component: AddProblemComponent }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
