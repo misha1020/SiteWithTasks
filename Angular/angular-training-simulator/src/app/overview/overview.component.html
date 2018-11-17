@@ -1,5 +1,6 @@
 <app-problem [problem] = "problem"></app-problem>
 
+<div class = "Font">
 <div class = "root">
 <div class="onlySymbols" *ngIf="coments.length == 0">
 	Комментариев нет!
@@ -13,7 +14,7 @@
 
 <div id = "fixed">
 	<div *ngIf="this.auth.getUser()!=null; else loggedOut">
-		<div class="text">Добавить комментарий:</div>
+		<div>Добавить комментарий:</div>
 		<input class="textbox" type="text" (keyup)="onKey($event)"/>
 		<button class="button" (click) = "sendComent()">Отправить</button>
 	</div>
@@ -26,3 +27,4 @@
 </div>
 </ng-template>
 </div>	
+</div>

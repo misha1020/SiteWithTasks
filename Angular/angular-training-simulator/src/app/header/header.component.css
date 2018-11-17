@@ -4,7 +4,7 @@
 	background-color: #2F4538;
 	color: #FFFFFF;	
 	height: 80px;
-	width: 100%;		
+	width: 100%;
 }
 
 #logo{
@@ -17,26 +17,26 @@
 .name{
 	font-size: 2.5em;
 	color: #FFFFFF;
-	font-family: Comic Sans MS, sans-serif;
 	float: right;
 	margin: 10px 15% 10px 10px;
+	font-family: Comic Sans MS, sans-serif;
 }
 
 .user{
 	font-size: 1.0em;
 	color: rgb(0, 255, 179);
-	font-family: Comic Sans MS, sans-serif;
+	font-family: "Segoe script";
 	float: left;
 	margin: 30px 0px 25px 5%;
 }
 
 .button_header{
 	font-size: 1.3em;
-	font-family: Comic Sans MS, sans-serif;
 	float: right;
 	margin: 25px 15px 25px 15px;
 	border-style: solid;
 	border-radius: 5px;
+	font-family: Comic Sans MS, sans-serif;
 }
 
 jw-modal {

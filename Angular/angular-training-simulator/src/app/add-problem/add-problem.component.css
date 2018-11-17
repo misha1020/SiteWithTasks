@@ -39,12 +39,19 @@
     margin-left: 20px;
 }
 
-textarea {
+.textarea{
     width: 90%;
-    font-size: .8rem;
+    font-family: Roland;
+    font-size: 1.0em;
     letter-spacing: 1px;
     padding: 10px;
     line-height: 1.5;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+.Font{
+    font-family: Comic Sans MS, sans-serif;
+    font-size: 1.5em;
+    color: #111;
 }

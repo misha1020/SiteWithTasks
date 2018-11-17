@@ -8,13 +8,6 @@
 	margin-right: 300px; 
 }
 
-h1{
-	font: 50pt Comic Sans MS;
-	font-weight: 500;
-	color: #2F4538;
-	text-align: center;
-}
-
 #root{
 	position: absolute;
 	left: 0;
