@@ -2,7 +2,7 @@
 	<div id = "logo">
 		<img src="../../assets/icons/icon.png"/>
 	</div>
-	<div class = "name">Задачи поколения Z</div>
+	<div class = "name" [routerLink]="['/']">Задачи поколения Z</div>
 
 	<div *ngIf="this.auth.getUser()!=null; else loggedOut">
 			<div class = "user">{{ (auth.item | async)?.firstName }} {{ (auth.item | async)?.lastName }}</div>
