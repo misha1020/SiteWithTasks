@@ -1,4 +1,6 @@
-<div id = "problemsContainer">
-	{{id}}
-</div>
 <app-problem [problem] = "problem"></app-problem>
+<ul>
+	<li style="list-style-type:none" *ngFor="let coment of coments">
+		<app-coment [coment] = "coment"></app-coment>
+	</li>
+  </ul>

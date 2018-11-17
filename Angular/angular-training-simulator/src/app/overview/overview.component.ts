@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { Problem } from '../_models';
+import { Problem, Coment, fsComent } from '../_models';
 import { ProblemService } from '../_services';
 
 @Component({
@@ -11,11 +11,13 @@ import { ProblemService } from '../_services';
 export class OverviewComponent implements OnInit {
   @Input() id: string;
   problem: Problem; 
+  coments: Coment[];
   constructor(private route: ActivatedRoute, private problemService: ProblemService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => 
         this.id = params.id);
     this.problemService.getInfo(this.id).subscribe(data => {this.problem = data as Problem});
+    this.coments = this.problemService.getComents(this.id);//.subscribe(data => {this.coments = data as Coment[]});
   }
 }
