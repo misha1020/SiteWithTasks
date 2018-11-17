@@ -33,7 +33,7 @@ export class ProblemService {
             idUser: idUser,
             idProblem: idProblem,
             Text: text
-          }
+        }
         const comentRef: AngularFirestoreDocument<any> = this.afStore.doc(`comentaries/${data.id}`);
         comentRef.set(data, { merge: true });
     }
@@ -62,5 +62,17 @@ export class ProblemService {
         });
 
         return coments;
+    }
+
+    postProblem(name: string, problemText: string, solutionText: string){
+        const data: Problem = {
+            id: this.afStore.createId(),
+            name: name,
+            problemText: problemText,
+            solutionText: solutionText
+        }
+        const problemRef: AngularFirestoreDocument<Problem> = this.afStore.doc(`problems/${data.id}`);
+        problemRef.set(data, { merge: true });
+        return problemRef.valueChanges();
     }
 }
