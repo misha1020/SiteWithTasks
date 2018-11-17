@@ -9,7 +9,7 @@
 
 	<div *ngIf="this.auth.getUser()!=null; else loggedOut">
 		<button class="button_header" (click)="logout()">Выход</button>
-		<button class="button_header" (click)="createProblem()">Добавить задачу</button>
+		<button class="button_header" (click)="createProblem()" [routerLink]="['/add_problem']">Добавить задачу</button>
 	</div>
 	<ng-template #loggedOut>
 		<button class="button_header" (click)="openModal('custom-modal-2')" [routerLink]="[{ outlets: {auth: ['register'] }}]">Регистрация</button>

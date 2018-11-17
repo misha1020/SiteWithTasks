@@ -29,6 +29,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { ProblemListComponent } from './problem-list/problem-list.component';
 import { ComentComponent } from './coment/coment.component';
+import { AddProblemComponent } from './add-problem/add-problem.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ComentComponent } from './coment/coment.component';
 	  ModalComponent,
 	  OverviewComponent,
 	  ProblemListComponent,
-	  ComentComponent
+	  ComentComponent,
+	  AddProblemComponent
   ],
   imports: [
     BrowserModule,
