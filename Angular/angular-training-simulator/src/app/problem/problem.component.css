@@ -32,3 +32,13 @@ h1{
 	font-family: "Roland";
 	color: #111;
 }
+
+.image{
+    height: 150px;
+	width: 150px;
+	margin: 10px 10px 10px 10px;
+}
+
+ul li{	
+	display: inline;
+}

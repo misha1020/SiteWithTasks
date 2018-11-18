@@ -3,32 +3,29 @@
 	<div class="Font">
 		<div class = "root">
 			<h1 [routerLink]="['/problem/', _problem.id]">{{_problem.name}}</h1>
-		<div class = "text">{{_problem.problemText}}</div>
-		<div>
+			<div class = "text">{{_problem.problemText}}</div>
+		
 			<ul>
-				<li style="list-style-type:none" *ngFor='let url of this.problemImgUrls'>
-						<img src={{url}} width="255" height="255">
+				<li *ngFor='let url of this.problemImgUrls'>
+					<img class = "image" src={{url}}>
 				</li>
 			</ul>
-		</div>
 
-		<h1>Решение</h1>
-
-		<div *ngIf="display; else plus"> 
-			<input id="plus" type="button" (click)="openModal()" value="Скрыть" />
-			<div class = "text">{{_problem.solutionText}}</div>
-			
-			<div>
+			<h1>Решение</h1>
+			<div *ngIf="display; else plus"> 
+				<input id="plus" type="button" (click)="openModal()" value="Скрыть" />
+				<div class = "text">{{_problem.solutionText}}</div>
+				
 				<ul>
-					<li style="list-style-type:none" *ngFor='let url of this.solutionImgUrls'>
-							<img src={{url}} width="255" height="255">
+					<li *ngFor='let url of this.solutionImgUrls'>
+						<img class = "image" src={{url}}>
 					</li>
 				</ul>
 			</div>
-		</div>
-		<ng-template #plus>
-			<input id="plus" type="button" (click)="openModal()" value="Показать" />
-		</ng-template>
+
+			<ng-template #plus>
+				<input id="plus" type="button" (click)="openModal()" value="Показать" />
+			</ng-template>
 		</div>
 	</div>
 </div>
