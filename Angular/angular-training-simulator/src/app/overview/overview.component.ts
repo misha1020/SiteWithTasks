@@ -17,9 +17,9 @@ export class OverviewComponent implements OnInit {
   constructor(private route: ActivatedRoute, private problemService: ProblemService, private auth: AuthenticationService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => 
-        this.id = params.id);
-    this.problemService.getInfo(this.id).subscribe(data => {this.problem = data as Problem});
+    this.route.params.subscribe(params => this.id = params.id);
+    this.problemService.getInfo(this.id).subscribe(data => this.problem = data as Problem);
+    
     this.coments = this.problemService.getComents(this.id);
   }
 

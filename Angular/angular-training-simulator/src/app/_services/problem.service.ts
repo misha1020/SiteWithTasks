@@ -108,4 +108,7 @@ export class ProblemService {
         });
         return urls;
     }
+    deleteComent(id: string){
+        this.afStore.doc(`comentaries/${id}`).delete();
+    }
 }

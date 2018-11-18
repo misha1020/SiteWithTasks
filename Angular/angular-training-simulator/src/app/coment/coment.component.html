@@ -2,5 +2,10 @@
   <div *ngIf="this.coment.user!=null">
     <div class="user">{{coment.user.firstName}} {{coment.user.lastName}}</div>
     <div class="text">{{coment.Text}}</div>
+    <div *ngIf="this.authenticationService.getUser() != null">
+      <div *ngIf="this.authenticationService.getUser().uid == this.coment.user.id">
+        <button (click)="delete()">х</button>
+      </div>
+    </div>
   </div>
   </div>
