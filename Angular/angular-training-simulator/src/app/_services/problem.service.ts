@@ -72,9 +72,9 @@ export class ProblemService {
     postProblem(name: string, problemText: string, solutionText: string, images : File[] = []){
         let imgNames = [];
         images.forEach(img =>{
-            name = this.afStore.createId();
-            imgNames.push(name);
-            this.postImage(name,img);
+            let imgName = this.afStore.createId();
+            imgNames.push(imgName);
+            this.postImage(imgName,img);
         });
         
         const data: Problem = {
