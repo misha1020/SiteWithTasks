@@ -1,6 +1,6 @@
 <div class = "Font">
-<div class="root">
 <div *ngIf="this.auth.getUser()!=null; else loggedOut">
+<div class="root">
   <form [formGroup]='problemForm' (ngSubmit)='onSubmit()'>
     <div class="form-group">
       <div class="text" for='name'>Название</div>
@@ -30,10 +30,13 @@
       </div>
   </form>
 </div>
+</div>
 
 <ng-template #loggedOut>
-  <div class	="onlySymbols">Для добавления новой задачи необходимо авторизоваться!</div>
+  <div class	="onlySymbols">
+    Для добавления новой задачи необходимо авторизоваться!<br>
+    <br>
+  </div>
 </ng-template>
-</div>
 </div>
 

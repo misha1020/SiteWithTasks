@@ -1,11 +1,14 @@
-<input class = "searchBar" type="text" placeholder="Поиск" (keyup)="onKey($event)"/>
-
-<div *ngIf="searchResult != undefined">
-  <div *ngIf="searchResult.length == 0">Ничего не найденно :(</div>
+<div >
+  <input class = "searchBar" type="text" placeholder="Поиск..." (keyup)="onKey($event)"/>
 </div>
 
-<ul>
-  <li style="list-style-type:none" *ngFor="let problem of searchResult">
+<div *ngIf="searchResult != undefined">
+  <div class = "onlySymbols" *ngIf="searchResult.length == 0">
+    Ничего не найденно :(<br>
+    <br>
+  </div>
+</div>
+
+<div *ngFor="let problem of searchResult">
     <app-problem [problem] = "problem"></app-problem>
-  </li>
-</ul>
+ </div>

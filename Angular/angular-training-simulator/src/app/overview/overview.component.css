@@ -34,8 +34,9 @@
 
 #fixed {
     position: fixed;
-    right: 1%; top: 15%;
+    right: 1%; top: 14%;
     left: 81%; 
+    z-index: 1;
 }
 
 .Font{

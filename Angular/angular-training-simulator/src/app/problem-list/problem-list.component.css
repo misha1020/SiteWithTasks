@@ -6,8 +6,21 @@
 	border: 1px solid #555;
 	border-radius: 7px;
 	font-size: 55px;
-	font-family: "Roland";
-	margin-left: 5%;
+    font-family: "Roland";
+    margin-bottom: 30px;
+}
+
+#fixed {
+    position: fixed;
+    right: 1%; top: 14%;
+    left: 81%; 
+}
+
+.onlySymbols{
+    font-size: 1.5em;
+	color: #000000;
+    font-family: Comic Sans MS, sans-serif;
+    margin: 5px 10px 5px 10px;
 }
 
 input[type=text] {
@@ -18,5 +31,5 @@ input[type=text] {
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 87%;
+    width: 92%;
 }

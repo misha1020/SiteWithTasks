@@ -1,9 +1,8 @@
 <header id = "header">
-	<div id = "logo">
-		<img src="../../assets/icons/icon.png"/>
-	</div>
-	
+	<img class = "logo" src="../../assets/icons/icon.png"/>
+
 	<div *ngIf="this.auth.getUser()!=null">
+		<img class = "logo2" src="../../assets/icons/person.png"/>
 		<div class = "user">{{ (auth.item | async)?.firstName }} {{ (auth.item | async)?.lastName }}</div>	
 	</div>
 
