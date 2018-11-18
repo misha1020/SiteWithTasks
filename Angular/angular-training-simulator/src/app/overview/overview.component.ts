@@ -17,15 +17,17 @@ export class OverviewComponent implements OnInit {
   constructor(private route: ActivatedRoute, private problemService: ProblemService, private auth: AuthenticationService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => 
-        this.id = params.id);
-    this.problemService.getInfo(this.id).subscribe(data => {this.problem = data as Problem});
-    this.coments = this.problemService.getComents(this.id);
+    this.route.params.subscribe(params => this.id = params.id);
+    this.problemService.getInfo(this.id).subscribe(data => this.problem = data as Problem);
+    this.problemService.getFsComents(this.id).subscribe(data => {
+      this.coments = this.problemService.getComents(this.id);
+    });
+    //this.coments = this.problemService.getComents(this.id);
   }
 
   sendComent(){
     this.problemService.postComent(this.auth.getUser().uid, this.problem.id,this.values);
-    this.coments = this.problemService.getComents(this.id);
+    //this.coments = this.problemService.getComents(this.id);
   }
 
   onKey(event: any) {

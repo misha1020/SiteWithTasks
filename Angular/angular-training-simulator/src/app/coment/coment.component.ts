@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Coment } from '../_models';
+import { AuthenticationService, ProblemService } from '../_services';
 
 @Component({
   selector: 'app-coment',
@@ -8,9 +9,15 @@ import { Coment } from '../_models';
 })
 export class ComentComponent implements OnInit {
   @Input() coment: Coment;
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService, private problemService:ProblemService) { }
 
   ngOnInit() {
+  }
+
+  delete(){
+    if(this.authenticationService.getUser() != null && this.authenticationService.getUser().uid == this.coment.user.id){
+      this.problemService.deleteComent(this.coment.id);
+    }
   }
 
 }
