@@ -39,7 +39,8 @@ export class AddProblemComponent implements OnInit {
     let name : string = this.problemForm.value.name;
     let problemText : string = this.problemForm.value.problemText;
     let solutionText : string = this.problemForm.value.solutionText;
-    this.problemService.postProblem(name, problemText, solutionText)
+    let images  = this.images;
+    this.problemService.postProblem(name, problemText, solutionText, images)
       .subscribe(data => this.router.navigate(['problem/', data.id]));
     this.loading=false;
   }

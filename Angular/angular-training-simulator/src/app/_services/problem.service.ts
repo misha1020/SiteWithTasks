@@ -69,21 +69,35 @@ export class ProblemService {
         return coments;
     }
 
-    postProblem(name: string, problemText: string, solutionText: string){
+    postProblem(name: string, problemText: string, solutionText: string, images : File[] = []){
+        let imgNames = [];
+        images.forEach(img =>{
+            name = this.afStore.createId();
+            imgNames.push(name);
+            this.postImage(name,img);
+        });
+        
         const data: Problem = {
             id: this.afStore.createId(),
             name: name,
             problemText: problemText,
-            solutionText: solutionText
+            solutionText: solutionText,
+            imageURI: imgNames
         }
         const problemRef: AngularFirestoreDocument<Problem> = this.afStore.doc(`problems/${data.id}`);
         problemRef.set(data, { merge: true });
         return problemRef.valueChanges();
     }
 
-    postImage(image){
-        let filePath = this.afStore.createId();
-        console.log(filePath);
-        return this.afStorage.upload(filePath,image);
+    postImage(name: string, image: File){
+        return this.afStorage.upload(name,image);
+    }
+
+    getImagesURLs(names : string[]){
+        let urls: string[] = [];
+        names.forEach(name => {
+            this.afStorage.ref(name).getDownloadURL().subscribe(data => urls.push(data as string));
+        });
+        return urls;
     }
 }
