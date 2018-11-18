@@ -6,7 +6,7 @@
 		<div class = "text">{{_problem.problemText}}</div>
 		<div>
 			<ul>
-				<li style="list-style-type:none" *ngFor='let url of this.urls'>
+				<li style="list-style-type:none" *ngFor='let url of this.problemImgUrls'>
 						<img src={{url}} width="255" height="255">
 				</li>
 			</ul>
@@ -17,6 +17,14 @@
 		<div *ngIf="display; else plus"> 
 			<input id="plus" type="button" (click)="openModal()" value="Скрыть" />
 			<div class = "text">{{_problem.solutionText}}</div>
+			
+			<div>
+				<ul>
+					<li style="list-style-type:none" *ngFor='let url of this.solutionImgUrls'>
+							<img src={{url}} width="255" height="255">
+					</li>
+				</ul>
+			</div>
 		</div>
 		<ng-template #plus>
 			<input id="plus" type="button" (click)="openModal()" value="Показать" />
