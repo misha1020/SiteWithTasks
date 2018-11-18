@@ -2,11 +2,12 @@
 
 <div class = "Font">
 <div class = "root">
+	<h1>Комментарии</h1>
 	<div class="onlySymbols" *ngIf="coments && coments.length == 0">
 		Комментариев нет!
 	</div>
 	<ul>
-		<li style="list-style-type:none" *ngFor="let coment of coments">
+		<li class = "marg" style="list-style-type:none;" *ngFor="let coment of coments">
 			<app-coment [coment] = "coment"></app-coment>
 		</li>
 	</ul>

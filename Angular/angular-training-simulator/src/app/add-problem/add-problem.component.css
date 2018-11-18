@@ -11,6 +11,7 @@ ul {
     list-style-image: url(../../assets/icons/picture.png);
     margin: 1px 1px 5px 20px;
 }
+
 #imageDelete{
     height: 15px;
 	width: 15px;
@@ -40,6 +41,7 @@ ul {
     font-family: Comic Sans MS, sans-serif;
     margin: 15px 0px 15px 20px;
 }
+
 .text{
     font-size: 1.5em;
 	color: #000000;

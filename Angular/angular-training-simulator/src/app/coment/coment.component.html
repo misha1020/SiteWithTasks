@@ -1,11 +1,14 @@
   <div class = "Font">
   <div *ngIf="this.coment.user!=null">
     <div class="user">{{coment.user.firstName}} {{coment.user.lastName}}</div>
-    <div class="text">{{coment.Text}}</div>
-    <div *ngIf="this.authenticationService.getUser() != null">
+    <span class="text">{{coment.Text}}
+     <div *ngIf="this.authenticationService.getUser() != null">
       <div *ngIf="this.authenticationService.getUser().uid == this.coment.user.id">
-        <button (click)="delete()">х</button>
+        <button id = "plus" (click)="delete()">
+          Удалить комментарий
+        </button>
       </div>
-    </div>
-  </div>
-  </div>
+     </div>
+    </span>
+</div>
+ </div>
