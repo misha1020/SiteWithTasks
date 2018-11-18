@@ -7,6 +7,7 @@ import { ProblemListComponent } from './problem-list/problem-list.component';
 import { AuthGuard } from './_guards';
 import { OverviewComponent } from './overview';
 import { AddProblemComponent } from './add-problem/add-problem.component';
+import {EmmaComponent } from './emma/emma.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent, outlet: "auth" },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'problem/:id', component: OverviewComponent},
+    { path: '_emma', component: EmmaComponent},
     { path: 'add_problem', component: AddProblemComponent }
 ];
 

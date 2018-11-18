@@ -31,6 +31,7 @@ import { environment } from '../environments/environment';
 import { ProblemListComponent } from './problem-list/problem-list.component';
 import { ComentComponent } from './coment/coment.component';
 import { AddProblemComponent } from './add-problem/add-problem.component';
+import { EmmaComponent } from './emma/emma.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AddProblemComponent } from './add-problem/add-problem.component';
 	  OverviewComponent,
 	  ProblemListComponent,
 	  ComentComponent,
-	  AddProblemComponent
+	  AddProblemComponent,
+	  EmmaComponent
   ],
   imports: [
     BrowserModule,

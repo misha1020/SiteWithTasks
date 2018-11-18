@@ -22,12 +22,10 @@ export class OverviewComponent implements OnInit {
     this.problemService.getFsComents(this.id).subscribe(data => {
       this.coments = this.problemService.getComents(this.id);
     });
-    //this.coments = this.problemService.getComents(this.id);
   }
 
   sendComent(){
     this.problemService.postComent(this.auth.getUser().uid, this.problem.id,this.values);
-    //this.coments = this.problemService.getComents(this.id);
   }
 
   onKey(event: any) {
