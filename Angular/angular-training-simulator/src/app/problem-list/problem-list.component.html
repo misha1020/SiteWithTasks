@@ -1,13 +1,13 @@
 <div id = "searchBar">
       <input class = "text" type="text" placeholder="Поиск" (keyup)="onKey($event)"/>
 <div>
+  
 <div *ngIf="searchResult != undefined">
-  <div *ngIf="searchResult.length == 0">
-    Ничего не найденно :(
-  </div>
-  <ul>
-    <li style="list-style-type:none" *ngFor="let problem of searchResult">
-      <app-problem [problem] = "problem"></app-problem>
-    </li>
-  </ul>
+  <div *ngIf="searchResult.length == 0">Ничего не найденно :(</div>
 </div>
+
+<ul>
+  <li style="list-style-type:none" *ngFor="let problem of searchResult">
+    <app-problem [problem] = "problem"></app-problem>
+  </li>
+</ul>

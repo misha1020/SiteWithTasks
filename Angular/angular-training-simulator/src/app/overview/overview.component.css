@@ -10,7 +10,7 @@
 .button{
 	background-color: #EEE;
     margin-bottom: 10px; 
-    border: 2px solid #2F4538;
+    border: 2px solid #3CBC8D;
     border-radius: 10px;
 }
 
@@ -18,20 +18,24 @@
     margin: 5px 10px 5px 10px;
 }
 
-.textbox {
-    width: 90%;
+.textarea{
+    width: 80%;
+    font-family: Roland;
     font-size: 0.7em;
-    padding: 10px 20px;
-    margin-top: 8px;
-    box-sizing: border-box;
-    background-color: #2F4538;
-    color: #EEE;
+    letter-spacing: 1px;
+    padding: 10%;
+    line-height: 1.5;
     border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #3CBC8D;
+    color: #EEE;
 }
+
 
 #fixed {
     position: fixed;
-    right: 0; bottom: 15%;
+    right: 1%; top: 15%;
+    left: 81%; 
 }
 
 .Font{
