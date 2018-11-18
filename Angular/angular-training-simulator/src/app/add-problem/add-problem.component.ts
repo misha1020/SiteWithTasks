@@ -12,7 +12,8 @@ import { Problem } from '../_models';
 export class AddProblemComponent implements OnInit {
   problemForm : FormGroup;
   loading = false;
-  images: File[];
+  problemImages: File[];
+  solutionImages: File[];
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -20,13 +21,16 @@ export class AddProblemComponent implements OnInit {
               private problemService:ProblemService) { }
 
   ngOnInit() {
-    this.images = [];
+    this.problemImages = [];
+    this.solutionImages = [];
     this.problemForm = this.formBuilder.group({
       name: ['', Validators.required],
       problemText: ['', Validators.required],
       solutionText: ['', Validators.required]
     });
   }
+
+
 
   get f() { return this.problemForm.controls; }
 
@@ -39,19 +43,29 @@ export class AddProblemComponent implements OnInit {
     let name : string = this.problemForm.value.name;
     let problemText : string = this.problemForm.value.problemText;
     let solutionText : string = this.problemForm.value.solutionText;
-    let images  = this.images;
-    this.problemService.postProblem(name, problemText, solutionText, images)
+    let images  = this.problemImages;
+    this.problemService.postProblem(name, problemText, solutionText, this.problemImages, this.solutionImages)
       .subscribe(data => this.router.navigate(['problem/', data.id]));
     this.loading=false;
   }
 
-  upload(event) {
+  uploadPr(event) {
     console.log(event.target.files[0]);
-    this.images.push(event.target.files[0]);
-    //console.log(this.problemService.postImage(event.target.files[0]));
+    this.problemImages.push(event.target.files[0]);
   }
-  deleteImg(image){
-    let i = this.images.indexOf(image);
-    this.images.splice(i,1);
+  
+  uploadSl(event) {
+    console.log(event.target.files[0]);
+    this.solutionImages.push(event.target.files[0]);
+  }
+
+  deleteImgPr(image){
+    let i = this.problemImages.indexOf(image);
+    this.problemImages.splice(i,1);
+  }
+
+  deleteImgSl(image){
+    let i = this.solutionImages.indexOf(image);
+    this.solutionImages.splice(i,1);
   }
 }
