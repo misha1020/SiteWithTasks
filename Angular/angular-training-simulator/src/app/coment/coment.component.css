@@ -12,3 +12,17 @@
 .Font{
     font-family: Comic Sans MS, sans-serif;
 }
+
+#imageDelete{
+    height: 15px;
+	width: 15px;
+	margin: 1px 1px 1px 1px;
+}
+
+#plus{
+	background-color: #EEE;
+	border-style: solid;
+	border-radius: 5px;
+    font-family: Comic Sans MS, sans-serif;	
+    color: rgb(231, 20, 20);
+}

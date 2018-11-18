@@ -18,10 +18,17 @@
     margin: 5px 10px 5px 10px;
 }
 
+h1{
+	font-size: 1.5em;
+	color: #2F4538;
+	text-align: left;
+	margin: 10px 10px 0px 10px;
+}
+
 .textarea{
     width: 80%;
     font-family: Roland;
-    font-size: 0.7em;
+    font-size: 1.0em;
     letter-spacing: 1px;
     padding: 10%;
     line-height: 1.5;
@@ -43,4 +50,8 @@
     font-family: "Roland";
     font-size: 1.2em;
     color: #111;
+}
+
+.marg{
+	margin-bottom: 3%;
 }
