@@ -43,6 +43,10 @@ export class ProblemService {
         comentRef.set(data, { merge: true });
     }
 
+    getFsComents(id: string){
+        return this.afStore.collection('comentaries', ref => ref.where('idProblem', '==', id )).valueChanges();
+    }
+
     getComents(id: string){
         this.fsComentsColl = this.afStore.collection('comentaries', ref => ref.where('idProblem', '==', id ));
         this.fsComents = this.fsComentsColl.valueChanges();
