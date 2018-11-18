@@ -22,7 +22,11 @@ export class ProblemService {
         this.itemColl = this.afStore.collection('problems');
         this.item = this.itemColl.valueChanges();
     }
-        
+    
+    getProblems(){
+        return this.afStore.collection('problems').valueChanges();
+    }
+
     getInfo(id : string){
         return this.afStore.doc<Problem>(`problems/${id}`).valueChanges()
     }

@@ -12,10 +12,14 @@ export class ProblemListComponent implements OnInit {
   searchResult: Problem[];
   value = '';
   constructor(private problemService: ProblemService) { 
-    problemService.item.subscribe(data => {this.problems = data as Problem[]; this.searchResult = data as Problem[] } );
+    
   }
 
   ngOnInit() {
+    this.problemService.getProblems().subscribe(data => {
+      this.problems = data as Problem[]; 
+      this.searchResult = data as Problem[];
+    });
   }
 
   
