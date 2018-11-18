@@ -1,7 +1,4 @@
-<div id = "searchBar">
-      <input class = "text" type="text" placeholder="Поиск" (keyup)="onKey($event)"/>
-<div>
-
+<input class = "searchBar" type="text" placeholder="Поиск..." (keyup)="onKey($event)"/>
 
 <div *ngIf="searchResult.length == 0">
   Ничего не найденно :(
