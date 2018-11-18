@@ -31,6 +31,15 @@
   </form>
 </div>
 
+<ul>
+  <li style="list-style-type:none" *ngFor='let image of images'>
+    {{image.name}}
+    <button (click)="deleteImg(image)">x</button>
+  </li>
+</ul>
+<input type="file" (change)="upload($event)" accept=".png,.jpg" />
+<button (click)='_upload()'>upload</button>
+
 <ng-template #loggedOut>
   <div class	="onlySymbols">Нужно авторизоваться!</div>
 </ng-template>

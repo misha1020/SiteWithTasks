@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { Problem, Coment, fsComent, User } from '../_models';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { forEach } from '@angular/router/src/utils/collection';
@@ -18,7 +19,7 @@ export class ProblemService {
     private coments: Coment[];
 
 
-    constructor(private afStore: AngularFirestore) {
+    constructor(private afStore: AngularFirestore, private afStorage: AngularFireStorage) {
         this.itemColl = this.afStore.collection('problems');
         this.item = this.itemColl.valueChanges();
     }
@@ -78,5 +79,11 @@ export class ProblemService {
         const problemRef: AngularFirestoreDocument<Problem> = this.afStore.doc(`problems/${data.id}`);
         problemRef.set(data, { merge: true });
         return problemRef.valueChanges();
+    }
+
+    postImage(image){
+        let filePath = this.afStore.createId();
+        console.log(filePath);
+        return this.afStorage.upload(filePath,image);
     }
 }

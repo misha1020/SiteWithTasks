@@ -12,6 +12,7 @@ import { Problem } from '../_models';
 export class AddProblemComponent implements OnInit {
   problemForm : FormGroup;
   loading = false;
+  images: File[];
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -19,6 +20,7 @@ export class AddProblemComponent implements OnInit {
               private problemService:ProblemService) { }
 
   ngOnInit() {
+    this.images = [];
     this.problemForm = this.formBuilder.group({
       name: ['', Validators.required],
       problemText: ['', Validators.required],
@@ -40,5 +42,15 @@ export class AddProblemComponent implements OnInit {
     this.problemService.postProblem(name, problemText, solutionText)
       .subscribe(data => this.router.navigate(['problem/', data.id]));
     this.loading=false;
+  }
+
+  upload(event) {
+    console.log(event.target.files[0]);
+    this.images.push(event.target.files[0]);
+    //console.log(this.problemService.postImage(event.target.files[0]));
+  }
+  deleteImg(image){
+    let i = this.images.indexOf(image);
+    this.images.splice(i,1);
   }
 }

@@ -25,6 +25,7 @@ import { OverviewComponent } from './overview';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from  '@angular/fire/database';
 import { AngularFirestoreModule } from  '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { ProblemListComponent } from './problem-list/problem-list.component';
@@ -54,7 +55,8 @@ import { AddProblemComponent } from './add-problem/add-problem.component';
     ReactiveFormsModule,
     HttpClientModule,
 	  AngularFireModule.initializeApp(environment.firebase),
-	  AngularFireDatabaseModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     routing
