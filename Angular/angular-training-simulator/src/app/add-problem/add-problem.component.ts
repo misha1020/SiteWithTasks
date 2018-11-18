@@ -54,4 +54,11 @@ export class AddProblemComponent implements OnInit {
     let i = this.images.indexOf(image);
     this.images.splice(i,1);
   }
+
+  sub(str: string){
+    if (str.length > 20)
+      return str.substring(0,12) + "..." + str.substring(str.length - 8 -4,str.length);
+    else
+      return str;
+  }
 }

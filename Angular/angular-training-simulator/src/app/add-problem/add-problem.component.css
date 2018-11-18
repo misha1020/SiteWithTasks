@@ -7,6 +7,16 @@
 	margin-bottom: 25px;
 }
 
+ul {
+    list-style-image: url(../../assets/icons/picture.png);
+    margin: 1px 1px 5px 20px;
+}
+#imageDelete{
+    height: 15px;
+	width: 15px;
+	margin: 1px 1px 1px 1px;
+}
+
 .onlySymbols{
     font-size: 1.0em;
 	color: #000000;
@@ -24,6 +34,12 @@
     margin: 15px 0px 15px 20px;
 }
 
+.buttonUpl{
+    color: #111;
+    font-size: 1.0em;
+    font-family: Comic Sans MS, sans-serif;
+    margin: 15px 0px 15px 20px;
+}
 .text{
     font-size: 1.5em;
 	color: #000000;
