@@ -48,7 +48,7 @@ export class ProblemService {
     }
 
     getComents(id: string){
-        this.fsComentsColl = this.afStore.collection('comentaries', ref => ref.where('idProblem', '==', id ));
+        this.fsComentsColl = this.afStore.collection('comentaries', ref => ref.where('idProblem', '==', id ).orderBy('idUser', 'desc'));
         this.fsComents = this.fsComentsColl.valueChanges();
         let coments: Coment[] = [];
 
