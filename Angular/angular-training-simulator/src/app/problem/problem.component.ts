@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Problem } from '../_models';
+import { ProblemService } from '../_services';
 
 @Component({
   selector: 'app-problem',
@@ -7,16 +8,24 @@ import { Problem } from '../_models';
   styleUrls: ['./problem.component.css']
 })
 export class ProblemComponent implements OnInit {
-	@Input() problem: Problem;
+	private urls : string[];
+	private _problem : Problem;
+	@Input() set problem(problem: Problem){
+		if(problem != undefined){
+			this._problem = problem;
+			if(this._problem.imageURI != undefined)
+				this.urls = this.problemService.getImagesURLs(this._problem.imageURI);
+		}
+	}
   private	display: boolean;
 
-	constructor() { }
+	constructor(private problemService: ProblemService) {	this.urls = [];	}
 
 	ngOnInit() {
 		this.display = false;
 	}
 
 	openModal() {
-	this.display = !this.display;
+		this.display = !this.display;
   }
 }

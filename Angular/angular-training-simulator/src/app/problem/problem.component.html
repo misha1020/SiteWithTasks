@@ -1,23 +1,26 @@
-<div class="Font">
-	<div class = "root">
-	<h1 [routerLink]="['/problem/', problem.id]">
-		{{problem.name}}
-	</h1>
-	<div class = "text">
-		{{problem.problemText}}
-	</div>
-	<h1>
-		Решение
-	</h1>
-	
-	<div *ngIf="display; else plus"> 
-		<input id="plus" type="button" (click)="openModal()" value="Скрыть" />
-		<div class = "text">
-			{{problem.solutionText}}
+
+<div *ngIf="this._problem != undefined ; else undPr">
+	<div class="Font">
+		<div class = "root">
+			<h1 [routerLink]="['/problem/', _problem.id]">{{_problem.name}}</h1>
+		<div class = "text">{{_problem.problemText}}</div>
+		<div>
+			<ul>
+				<li style="list-style-type:none" *ngFor='let url of this.urls'>
+						<img src={{url}} width="255" height="255">
+				</li>
+			</ul>
 		</div>
-	</div>
+
+		<h1>Решение</h1>
+
+		<div *ngIf="display; else plus"> 
+			<input id="plus" type="button" (click)="openModal()" value="Скрыть" />
+			<div class = "text">{{_problem.solutionText}}</div>
+		</div>
 		<ng-template #plus>
 			<input id="plus" type="button" (click)="openModal()" value="Показать" />
 		</ng-template>
-	<div>
+		</div>
+	</div>
 </div>
