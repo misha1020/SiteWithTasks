@@ -5,7 +5,7 @@
 		<img id = "person" src="../../assets/icons/person.png"/>
 		<div class = "user">{{ (auth.item | async)?.firstName }} {{ (auth.item | async)?.lastName }}</div>
 		<button class="button_header" (click)="logout()">Выход</button>
-		<button class="button_header" (click)="createProblem()" [routerLink]="['/add_problem']">Добавить задачу</button>
+		<button class="button_header" [routerLink]="['/add_problem']">Добавить задачу</button>
 		<div id = "nameLin" [routerLink]="['/']">Задачи поколения Z</div>
 	</div>
 
